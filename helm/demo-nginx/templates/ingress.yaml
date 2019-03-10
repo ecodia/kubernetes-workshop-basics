@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: nginx-ingress
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
 spec:
   rules:
-  - host: nginx.demo
+  - host: {{ .Values.ingress.domain }}
     http:
       paths:
       - path: /
         backend:
-          serviceName: nginx-service
+          serviceName: {{ .Release.Name }}-{{ .Chart.Name }}
           servicePort: 80

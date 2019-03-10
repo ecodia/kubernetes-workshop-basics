@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx-service
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
 spec:
   selector:
-    app: nginx
+    app: {{ .Chart.Name }}
   ports:
   - protocol: TCP
     port: 80
