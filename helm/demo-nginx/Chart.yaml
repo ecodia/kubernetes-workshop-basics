@@ -1,0 +1,16 @@
+name: nginx-demo
+version: 1.0.0
+appVersion: 1.2.3
+description: this is a minimal example application for a tutorial using helmcharts
+keywords:
+- tutorial
+- example
+home: https://ecodia.de
+icon: https://example.com/logo.svg
+sources:
+- https://github.com/ecodia/kubernetes-workshop-basics
+maintainers:
+- name: Jane Doe
+  email: jane.doe@example.com
+- name: John Doe
+  email: john.doe@example.com
