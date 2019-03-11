@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job
+spec:
+  template:
+    spec:
+      containers:
+      - name: job
+        image: python
+        command: ["python", "/tmp/sleep.py"]
+        volumeMounts:
+        - name: script-volume
+          mountPath: /tmp/
+      volumes:
+      - name: script-volume
+        configMap:
+          name: python-test
+      restartPolicy: Never
+  backoffLimit: 2

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: python-test
+  namespace: default
+data:
+  sleep.py: |
+    import time
+    for i in range(100):
+      time.sleep(0.2)
+      print(i)
+  sleep_squared.py: |
+    import time
+    for i in range(100):
+      time.sleep(0.2)
+      print(i*i)
