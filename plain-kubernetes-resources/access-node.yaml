@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: access-node
+spec:
+  securityContext:
+    runAsUser: 0
+  containers:
+  - name: access-node
+    image: ubuntu
+    securityContext:
+      runAsUser: 0
+      allowPrivilegeEscalation: true
+    volumeMounts:
+      - name: root
+        mountPath: /opt/
+    command: ["sleep"]
+    args: ["infinity"]
+  restartPolicy: OnFailure
+  volumes:
+    - name: root
+      hostPath:
+        path: /
